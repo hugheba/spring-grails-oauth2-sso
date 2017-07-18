@@ -54,6 +54,7 @@ Update the Grails project config file `sso-grails-demo/grails-app/application.ym
 You'll also need to update the Wordpress settings for permalinks  at `Admin -> Settings -> Permalinks -> Common Settings` and choose `Post name` and Save.
 
 _<sup>1</sup> Unregisted version of the WP OAuth Server allows only one client at a time, so you'll have to toggle between the two to test. Be sure to update the new clientID and clientSecret._
+_You may also just boot one application up at the same time and use port `8092` for both._
 
 ## Start SpringBoot
 
