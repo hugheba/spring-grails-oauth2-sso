@@ -1,0 +1,20 @@
+server:
+    port: 8082
+    contextPath: /
+    session:
+      cookie:
+        name: UISESSION
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      clientId: 9ao9t0fgxvSO5I2W5tqlj31gEEHV2T
+      clientSecret: 2b4rkxszN04GOapR7ukxPEARUfvCby
+      accessTokenUri: http://localhost:8081/oauth/token
+      userAuthorizationUri: http://localhost:8081/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8081/wp-json/wp/v2/users/me
+spring:
+  thymeleaf:
+    cache: false

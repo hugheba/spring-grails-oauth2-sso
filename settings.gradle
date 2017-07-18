@@ -1,0 +1,3 @@
+rootProject.name = 'spring-grails-oauth2-sso'
+include 'sso-demo'
+include 'sso-grails-demo'
