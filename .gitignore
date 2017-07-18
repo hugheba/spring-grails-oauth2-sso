@@ -40,4 +40,4 @@ gradle-app.setting
 
 .idea
 *.iml
-docker-wp-full-master
+sso-wordpress

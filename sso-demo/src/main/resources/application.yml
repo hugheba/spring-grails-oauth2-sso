@@ -1,5 +1,5 @@
 server:
-    port: 8082
+    port: 8092
     contextPath: /
     session:
       cookie:
@@ -9,12 +9,12 @@ security:
     enabled: false
   oauth2:
     client:
-      clientId: 9ao9t0fgxvSO5I2W5tqlj31gEEHV2T
-      clientSecret: 2b4rkxszN04GOapR7ukxPEARUfvCby
-      accessTokenUri: http://localhost:8081/oauth/token
-      userAuthorizationUri: http://localhost:8081/oauth/authorize
+      clientId: YUVBfTCei28UciXaWWNbRGSSfH9hBv
+      clientSecret: 69M9twm51UrpRObklmdGIV1np1WIbI
+      accessTokenUri: http://localhost:8091/oauth/token
+      userAuthorizationUri: http://localhost:8091/oauth/authorize
     resource:
-      userInfoUri: http://localhost:8081/wp-json/wp/v2/users/me
+      userInfoUri: http://localhost:8091/wp-json/wp/v2/users/me
 spring:
   thymeleaf:
     cache: false

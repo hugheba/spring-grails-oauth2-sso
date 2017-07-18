@@ -1,0 +1,6 @@
+version: "2"
+services:
+  wp:
+    build: ./
+    ports:
+      - "8091:80"

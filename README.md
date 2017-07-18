@@ -10,30 +10,28 @@ The Wordpress installation is a simple self-contained Docker container.
 
 - Docker (https://www.docker.com/get-docker)
 - Docker Compose (https://github.com/docker/compose)
-- Wordpress Docker image (https://github.com/sspreitzer/docker-wp-full)
+- Wordpress Docker image (https://github.com/sspreitzer/docker-wp-full) *** If building manually ***
 
-Install Docker and Docker Container and clone the Wordpress Docker repo.
+#### Wordpress Docker
 
-Add the following `docker-compose.yml` to the root of the Wordpress Docker project.
+The project contains preconfigured Docker resources for a Wordpress LAMP container.
 
-    version: "2"
-    services:
-      wp:
-        build: ./
-        ports:
-          - "8081:80"
-          
-In a terminal, start the Wordpress Docker container with the command:
+Use *docker-compose* to start the container from the `./sso-wordpress`
+
+In a terminal, start the Wordpress Docker container with the following command:
 
     docker-compose up -d
     
+You should be able to reach the Wordpress installation from the browser at http://localhost:8091.
 
-### Configure Wordpress oAuth2 Server
+You can login with the username/password `admin` and `admin`.
+    
+#### Configure Wordpress oAuth2 Server Manually
 
 Setup Wordpress with a new user and download and install the following plugins:
  
 - **WP OAuth Sever by Justin Greer** (https://wordpress.org/plugins/oauth2-provider/).
-- **WP API** ()
+- **WP API** (https://wordpress.org/plugins/rest-api/)
 
 In the Wordpress Oauth Server settings, create a new clients, one for Spring and one for Grails, and copy their clientId and secret to the respect conf files for the projects:
 
@@ -54,3 +52,19 @@ And for the Grails client use:
 Update the Grails project config file `sso-grails-demo/grails-app/application.yml`, setting `org.grails.springsecurity.oauth.providers[clientId,clientSecret]`
 
 You'll also need to update the Wordpress settings for permalinks  at `Admin -> Settings -> Permalinks -> Common Settings` and choose *Post name* and Save.
+
+## Start SpringBoot
+
+Start the SpringBoot application in a new terminal with the following command:
+
+    ./gradlew :sso-demo:bootRun
+    
+You should now be able to browse the SpringBoot application at http://localhost:8092.
+    
+## Start Grails
+
+Start the Grails application in a new terminal with the following command:
+
+    ./gradlew :sso-grails-demo:bootRun
+    
+You should now be able to browse the Grails application at http://localhost:8093.
