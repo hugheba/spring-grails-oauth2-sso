@@ -2,14 +2,17 @@ package sso.grails.demo
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso
-import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor
 import org.springframework.context.annotation.Bean
+import org.springframework.security.core.userdetails.UserDetailsService
+import sso.grails.demo.services.CustomUserDetailsService
 
-@EnableOAuth2Sso
-@SpringBootApplication
 class Application extends GrailsAutoConfiguration {
+
+    @Bean
+    UserDetailsService userDetailsService() {
+        return new CustomUserDetailsService()
+    }
+
     static void main(String[] args) {
         GrailsApp.run(Application, args)
     }

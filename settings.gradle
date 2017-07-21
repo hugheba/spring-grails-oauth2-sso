@@ -1,3 +1,5 @@
 rootProject.name = 'spring-grails-oauth2-sso'
 include 'sso-demo'
 include 'sso-grails-demo'
+include 'grails-spring-security-oauth2-wordpress'
+//project(':grails-spring-security-oauth2-wordpress').projectDir = new File('./grails-spring-security-oauth2-wordpress')
